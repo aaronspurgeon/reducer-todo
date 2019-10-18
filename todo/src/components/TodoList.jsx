@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-const TodoList = () => {
+const TodoList = ({ task }) => {
     return (
         <div>
-            
+            <h2>{task.item}</h2>
         </div>
     )
 }
+
+export default TodoList;
