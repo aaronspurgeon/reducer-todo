@@ -3,7 +3,7 @@ import { initialState, reducer } from '../reducers/todoReducer';
 import TodoList from './TodoList';
 
 function Todo() {
-  const [newTask, setNewTask] = useState();
+  const [newTask, setNewTask] = useState('');
   const [state, dispatch] = useReducer(reducer, initialState);
   
   const handleChange = e => {
@@ -12,13 +12,13 @@ function Todo() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setNewTask('');
     dispatch({ type: 'ADD_TASK', payload: newTask});
+    setNewTask('');
   }
 
   return (
     <div>
-      {state.map((task, index) => (
+      {state.todoTasks.map((task, index) => (
         <TodoList task={task} key={index} />
       ))}
       <form onSubmit={handleSubmit}>
