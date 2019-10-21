@@ -52,6 +52,14 @@ export function reducer(state, action) {
         ...state,
         todoTasks: toggleTodo
       }
+    case "REMOVE_COMPLETED":
+      const removeCompleted = state.todoTasks.filter(item => {
+        return !item.completed
+      })
+      return {
+        ...state,
+        todoTasks: removeCompleted
+      }
     default:
       return state;
   }

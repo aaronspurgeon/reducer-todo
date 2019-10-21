@@ -16,10 +16,10 @@ function Todo() {
     setNewTask('');
   }
 
-  // const handleComplete = e => {
-  //   e.preventDefault();
-  //   dispatch({ type: 'TOGGLE_COMPLETED'})
-  // }
+  const handleComplete = e => {
+    e.preventDefault();
+    dispatch({ type: 'REMOVE_COMPLETED'})
+  }
 
   return (
     <div>
@@ -35,6 +35,7 @@ function Todo() {
           onChange={handleChange}
         />
         <button type='submit'>Add</button>
+        <button onClick={handleComplete}>Delete finished tasks</button>
       </form>
     </div>
   )
