@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Todo from './components/Todo';
-import './App.css';
+import './App.scss';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -9,9 +9,9 @@ function App() {
 
   }
   return (
-    <div className="App">
-      <h1>Todo</h1>
-      <Todo />
+    <div style={{textAlign: 'center'}} className="App">
+      <h1>Tasks you need to do ASAP!</h1>
+        <Todo />
     </div>
   );
 }
