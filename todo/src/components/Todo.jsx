@@ -16,10 +16,15 @@ function Todo() {
     setNewTask('');
   }
 
+  // const handleComplete = e => {
+  //   e.preventDefault();
+  //   dispatch({ type: 'TOGGLE_COMPLETED'})
+  // }
+
   return (
     <div>
       {state.todoTasks.map((task, index) => (
-        <TodoList task={task} key={index} />
+        <TodoList task={task} key={index} dispatch={dispatch} />
       ))}
       <form onSubmit={handleSubmit}>
         <input

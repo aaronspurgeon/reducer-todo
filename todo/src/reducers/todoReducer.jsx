@@ -38,7 +38,19 @@ export function reducer(state, action) {
           completed: false,
           id: new Date()
         }
-       ]
+        ]
+      }
+    case "TOGGLE_COMPLETED":
+      const toggleTodo = state.todoTasks.map(item => {
+        if (item.id === action.payload.id) {
+          return {...item, completed: !item.completed};
+        } else {
+          return item;
+        }
+      });
+      return {
+        ...state,
+        todoTasks: toggleTodo
       }
     default:
       return state;
